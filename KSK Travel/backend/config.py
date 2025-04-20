@@ -1,4 +1,5 @@
 # backend/config.py
+from dotenv import load_dotenv
 import os
 
 class Config:
@@ -10,3 +11,11 @@ class Config:
     MYSQL_USER = os.environ.get('MYSQL_USER', 'root')
     MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD', 'Dambo123')
     MYSQL_DB = os.environ.get('MYSQL_DB', 'user_db')
+    
+    # ==== Flask‑Mail settings ====
+    MAIL_SERVER   = 'smtp.gmail.com'        # or your SMTP host
+    MAIL_PORT     = 587
+    MAIL_USE_TLS  = True
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')  # your SMTP user
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')  # your SMTP password
+    MAIL_DEFAULT_SENDER = ('KSK Travel Contact', 'no-reply@ksktravel.com')

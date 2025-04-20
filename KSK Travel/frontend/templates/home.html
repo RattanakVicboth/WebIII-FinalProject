@@ -62,6 +62,7 @@
                             <input id="signupPassword" type="password" placeholder="Password" required>
                           </div>
                           <div class="field btn">
+                            <div class="btn-layer"></div>
                             <input type="submit" value="Signup">
                           </div>
                         </form>
@@ -83,9 +84,11 @@
             </div>
             <div class="shadow scale"></div>
             <div class="message"><h1 class="alert">Success!</h1><p>yay, everything is working.</p></div>
-            <button class="button-box" onclick="window.location.href='/'">
+            <button
+              class="button-box"
+              onclick="window.location.href='{{ url_for('index') }}'">
               <h1 class="green">continue</h1>
-          </button>
+            </button>
           </div>
 
           <!-- Error Box -->

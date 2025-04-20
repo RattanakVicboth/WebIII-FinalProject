@@ -154,7 +154,7 @@ button:hover {
 
 /* Team Section */
 .team {
-	padding: 30px 0;
+	/* padding: 30px 0; */
 	text-align: center;
 }
 
@@ -167,8 +167,8 @@ button:hover {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	gap: 15px;
-	margin-top: 20px;
+	gap: 113px;
+	/* margin-top: 10px; */
 }
 
 .card {
@@ -177,7 +177,7 @@ button:hover {
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 	overflow: hidden;
 	transition: transform 0.2s, box-shadow 0.2s;
-	width: 18rem;
+	width: 17rem;
 	height: 25rem;
 	margin-top: 10px;
 }
@@ -272,7 +272,7 @@ footer {
 		width: 10rem;
 	}
 
-	.team {
+	/* .team {
 		margin: 0 1rem;
-	}
+	} */
 }

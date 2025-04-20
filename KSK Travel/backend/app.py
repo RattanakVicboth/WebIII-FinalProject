@@ -1,22 +1,31 @@
 # backend/app.py
-from flask import Flask, render_template
+from flask import Flask, render_template, request, flash, redirect, url_for
+from flask_mail import Mail, Message
 from flask_cors import CORS
 from config import Config
 from routes.auth import auth_bp
-from routes.reservation import reservation_bp  # Import the reservation blueprint
+from routes.reservation import reservation_bp
 
-# Initialize the Flask app and configure template/static folders.
-# Adjust the paths to 'templates' and 'static' if your frontend is located elsewhere.
-app = Flask(__name__, template_folder='../frontend/templates', static_folder='../frontend/static')
+# Initialize Flask
+app = Flask(
+    __name__,
+    template_folder='../frontend/templates',
+    static_folder='../frontend/static'
+)
 app.config.from_object(Config)
 
-# Enable CORS for all routes
+# Enable CORS
 CORS(app)
+
+# Initialize Flask‑Mail
+mail = Mail(app)
 
 # Register blueprints
 app.register_blueprint(auth_bp)
 app.register_blueprint(reservation_bp, url_prefix='/reservation')
 
+
+# -- Your existing page routes --
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -68,6 +77,47 @@ def locations():
 @app.route('/table')
 def table():
     return render_template('TableDetail.html')
+
+@app.route('/cancel')
+def cancel_page():
+    return render_template('cancel_reservation.html')
+
+
+# -- New: handle contact‑form submissions --
+@app.route('/send_message', methods=['POST'])
+def send_message():
+    # Gather form fields
+    name    = request.form.get('name', '').strip()
+    email   = request.form.get('email', '').strip()
+    phone   = request.form.get('phone', '').strip()
+    message = request.form.get('message', '').strip()
+
+    # Build email content
+    body = f"""
+You have a new message from the KSK Travel contact form:
+
+Name:    {name}
+Email:   {email}
+Phone:   {phone}
+
+Message:
+{message}
+"""
+
+    try:
+        msg = Message(
+            subject=f"Contact Form: {name}",
+            recipients=["2022133heng@aupp.edu.kh"],
+            body=body
+        )
+        mail.send(msg)
+        flash("Your message has been sent!", "success")
+    except Exception as e:
+        print("Mail send error:", e)
+        flash("Sorry, we couldn't send your message. Please try again later.", "danger")
+
+    return redirect(url_for('contact_form'))
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
