@@ -1,3 +1,4 @@
 Flask
-requests
-numpy
+flask-cors
+mysql-connector-python
+python-dotenv

@@ -1,51 +1,73 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS  # Import the CORS module
+# backend/app.py
+from flask import Flask, render_template
+from flask_cors import CORS
+from config import Config
+from routes.auth import auth_bp
+from routes.reservation import reservation_bp  # Import the reservation blueprint
 
-app = Flask(__name__)
+# Initialize the Flask app and configure template/static folders.
+# Adjust the paths to 'templates' and 'static' if your frontend is located elsewhere.
+app = Flask(__name__, template_folder='../frontend/templates', static_folder='../frontend/static')
+app.config.from_object(Config)
 
 # Enable CORS for all routes
 CORS(app)
 
-# Example hardcoded users (usually, you'd get this from a database)
-users = {
-    "abc@gmail.com": "abc123"
-}
+# Register blueprints
+app.register_blueprint(auth_bp)
+app.register_blueprint(reservation_bp, url_prefix='/reservation')
 
-# Home route (root)
 @app.route('/')
 def home():
-    return 'Welcome to the KSK Travel API!'
+    return render_template('home.html')
 
-# Favicon route (to avoid 404 errors for the favicon)
-@app.route('/favicon.ico')
-def favicon():
-    return '', 204
+@app.route('/index.html')
+def index():
+    return render_template('index.html')
 
-# Login API route
-@app.route('/login', methods=['POST'])
-def login():
-    data = request.get_json()
-    email = data.get('email')
-    password = data.get('password')
+@app.route('/service')
+def service():
+    return render_template('service.html')
 
-    if users.get(email) == password:
-        return jsonify({"success": True, "message": "Login successful"}), 200
-    else:
-        return jsonify({"success": False, "message": "Invalid credentials"}), 401
+@app.route('/about-us')
+def about_us():
+    return render_template('about-us.html')
 
-# Signup API route
-@app.route('/signup', methods=['POST'])
-def signup():
-    data = request.get_json()
-    name = data.get('name')
-    email = data.get('email')
-    password = data.get('password')
-    mobile = data.get('mobile')
+@app.route('/contact')
+def contact_form():
+    return render_template('Contact-form.html')
 
-    if email in users:
-        return jsonify({"success": False, "message": "Email already exists"}), 400
-    users[email] = {'name': name, 'email': email, 'password': password, 'mobile': mobile}
-    return jsonify({"success": True, "message": "Signup successful"}), 201
+@app.route('/accommodation')
+def accommodation():
+    return render_template('accommodation.html')
+
+@app.route('/transportation')
+def transportation():
+    return render_template('transportation.html')
+
+@app.route('/form')
+def form():
+    return render_template('formTransportation.html')
+
+@app.route('/restaurant')
+def restaurant():
+    return render_template('restaurant.html')
+
+@app.route('/popular')
+def popular():
+    return render_template('popular.html')
+
+@app.route('/hotel_checkout')
+def hotel_checkout():
+    return render_template('hotel-checkout.html')
+
+@app.route('/locations')
+def locations():
+    return render_template('locations.html')
+
+@app.route('/table')
+def table():
+    return render_template('TableDetail.html')
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001)

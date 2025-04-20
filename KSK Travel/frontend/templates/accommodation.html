@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <script src="https://kit.fontawesome.com/0e1ed34929.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>service</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/popular.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/service.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/accommodation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/book-in-out.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,700;1,800&display=swap">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <script src="https://kit.fontawesome.com/0e1ed34929.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<header class="header-area">
+    <nav>
+      <img src="{{ url_for('static', filename='images/LogoKSK.png') }}" alt="logo" class="logo" />
+      <ul>
+        <li>
+          <a href="{{ url_for('index') }}">
+            <span class="material-symbols-outlined">Home</span>
+            <span>HOME</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('service') }}">
+            <span class="material-symbols-outlined">calendar_month</span>
+            <span>SERVICES</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('about_us') }}">
+            <span class="material-symbols-outlined">people</span>
+            <span>ABOUT US</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ url_for('contact_form') }}">
+            <span class="material-symbols-outlined">call</span>
+            <span>CONTACT US</span>
+          </a>
+        </li>
+      </ul>
+      <div class="accounts">
+        <a href="{{ url_for('home') }}"> Log In / Sign Up </a>
+      </div>
+    </nav>
+  </header>
+        <!-- check availability -->
+        <div class="availability mt-4">
+            <form action="./reservation.html">
+                <div class="card shadow border-0 rounded-0">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 p-4 m-auto">
+                                <p>
+                                    Check in
+                                </p>
+                                <input type="date" class="form-control border-0 p-0" name="check-in" id="">
+                            </div>
+                            <div class="col-md-3 p-4 m-auto">
+                                <p>
+                                    Check Out
+                                </p>
+                                <input type="date" class="form-control border-0 p-0" name="check-out" id="">
+                            </div>
+                            <div class="col-md-3 p-4 m-auto">
+                                <p>
+                                    Guests
+                                </p>
+                                <input type="text" class="form-control border-0 p-0" name="guests" id="">
+                            </div>
+                            <div class="col-md-3 p-4 m-auto">
+                                <p>
+                                    <a id="promo" class="text-primary text-decoration-none">
+                                        Have a Promo Code?
+                                    </a>
+                                <div id="promo-holder">
+                                    <form action="">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control fs-14" placeholder="promo code"
+                                                name="" id="">
+                                            <a class="btn btn-danger fs-14 d-flex justify-content-center align-items-center"
+                                                id="promo-closer">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                                </p>
+                                <button class=" btn btn-orange rounded-0 w-100">
+                                    CHECK AVAILABILITY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- check availability -->
+    </div>
+</section>
+<body>
+
+    <body>
+        <section class="places">
+            <div class="places-text">
+              <small>PHNOM PENH, HOTEL RESERVATION</small>
+              <h2>BEST RECOMMENDED</h2>
+            </div>
+        
+            <div class="cards">
+              <div class="card">
+                <div class="zoom-img">
+                  <div class="img-card">
+                    <a href="{{ url_for('hotel_checkout') }}">
+                      <img src="{{ url_for('static', filename='images/naga.jpg') }}" alt="NagaWorld">
+                    </a>
+                  </div>
+                </div>
+                <div class="text">
+                  <span class="rating">⭐⭐⭐⭐⭐</span>
+                  <h2>Phnom Penh, Cambodia</h2>
+                  <p class="cost">Start from $55 | Per Room</p>
+                  <div class="card-box">
+                    <p class="time">🕓 15 minutes</p>
+                    <p class="location">NagaWorld</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="zoom-img">
+                  <div class="img-card">
+                    <a href="{{ url_for('hotel_checkout') }}">
+                      <img src="{{ url_for('static', filename='images/skytree.jpg') }}" alt="Sky Tree Hotel">
+                    </a>
+                  </div>
+                </div>
+                <div class="text">
+                  <span class="rating">⭐⭐⭐⭐⭐</span>
+                  <h2>Phnom Penh, Cambodia</h2>
+                  <p class="cost">Start from $40 | Per Room</p>
+                  <div class="card-box">
+                    <p class="time">🕓 15 minutes</p>
+                    <p class="location">Sky Tree Hotel</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="zoom-img">
+                  <div class="img-card">
+                    <a href="{{ url_for('hotel_checkout') }}">
+                      <img src="{{ url_for('static', filename='images/sokha.jpg') }}" alt="Sokha Phnom Penh Hotel">
+                    </a>
+                  </div>
+                </div>
+                <div class="text">
+                  <span class="rating">⭐⭐⭐⭐⭐</span>
+                  <h2>Phnom Penh, Cambodia</h2>
+                  <p class="cost">Start from $89 | Per Room</p>
+                  <div class="card-box">
+                    <p class="time">🕓 15 minutes</p>
+                    <p class="location">Sokha Phnom Penh Hotel</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="zoom-img">
+                  <div class="img-card">
+                    <a href="{{ url_for('hotel_checkout') }}">
+                      <img src="{{ url_for('static', filename='images/rosewood.jpg') }}" alt="Rosewood Phnom Penh">
+                    </a>
+                  </div>
+                </div>
+                <div class="text">
+                  <span class="rating">⭐⭐⭐⭐⭐</span>
+                  <h2>Phnom Penh, Cambodia</h2>
+                  <p class="cost">Start from $300 | Per Room</p>
+                  <div class="card-box">
+                    <p class="time">🕓 15 minutes</p>
+                    <p class="location">Rosewood Phnom Penh</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="zoom-img">
+                  <div class="img-card">
+                    <a href="{{ url_for('hotel_checkout') }}">
+                      <img src="{{ url_for('static', filename='images/raffles.jpg') }}" alt="Raffles Hotel Le Royal">
+                    </a>
+                  </div>
+                </div>
+                <div class="text">
+                  <span class="rating">⭐⭐⭐⭐⭐</span>
+                  <h2>Phnom Penh, Cambodia</h2>
+                  <p class="cost">Start from $323 | Per Room</p>
+                  <div class="card-box">
+                    <p class="time">🕓 15 minutes</p>
+                    <p class="location">Raffles Hotel Le Royal</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="zoom-img">
+                  <div class="img-card">
+                    <a href="{{ url_for('hotel_checkout') }}">
+                      <img src="{{ url_for('static', filename='images/capri.jpg') }}" alt="Capri Hotel Residences">
+                    </a>
+                  </div>
+                </div>
+                <div class="text">
+                  <span class="rating">⭐⭐⭐⭐⭐</span>
+                  <h2>Phnom Penh, Cambodia</h2>
+                  <p class="cost">Start from $60 | Per Room</p>
+                  <div class="card-box">
+                    <p class="time">🕓 15 minutes</p>
+                    <p class="location">Capri Hotel Residences</p>
+                  </div>
+                </div>
+              </div>
+            </div>            
+        </section>
+    </body>
+        <footer class="page-footer">
+            <section class="footer_bro" style="color:white">
+              <h2>Our Social Media</h2>
+              <h2>For any more information, please kindly visit our social media page.</h2>
+              <div class="icons">
+                <a href="https://web.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+            </div>
+              <div class="footline">
+                <div id="powered">@Copyright 2025 KSK Travel, All Rights Reserved.</div>
+              </div>
+            </section>
+          </footer>
+</html>
