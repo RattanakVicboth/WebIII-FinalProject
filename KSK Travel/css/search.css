@@ -1,0 +1,123 @@
+/* Style for the search container */
+.search-container {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* Style for the search input */
+#business-search {
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+/* Search input focus effect */
+#business-search:focus {
+  border-color: #66afe9;
+}
+
+/* Business list container */
+#business-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+/* Business item style */
+.business-item {
+  width: 30%;
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+/* Hover effect on business items */
+.business-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Business item text */
+.business-item p {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Business item description */
+.business-item small {
+  color: #777;
+  font-size: 14px;
+}
+/* Style for the search container */
+.search-container {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  h1 {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Style for the search input */
+  #business-search {
+    width: 60%;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  #business-search:focus {
+    border-color: #4caf50;
+  }
+  
+  /* Business list container */
+  .business-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  /* Business item style */
+  .business-item {
+    width: 25%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center;
+  }
+  
+  .business-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .business-item p {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .business-item small {
+    color: #777;
+    font-size: 14px;
+  }
+  

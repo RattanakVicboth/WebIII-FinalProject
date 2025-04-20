@@ -1,0 +1,12 @@
+.header-area {
+    
+    background: url('../images/converted_image.png');
+    background-position: top;
+    background-size: cover;
+    opacity: 90%;
+    height: 50vh;
+	/* background-position: center; */
+    background-size: cover;
+    position: relative;
+
+}

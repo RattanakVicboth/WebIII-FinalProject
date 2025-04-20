@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+body {
+	margin: 0;
+	font-family: 'Lato', sans-serif;
+}
+h2{
+	color:#ffffff;
+	/* text-transform:capitalize; */
+	margin-bottom:20px;
+	font-size:23px;
+}
+/*------------------------Scroll Bar-----------------------*/
+/* ::-webkit-scrollbar {
+	width: 20px;
+  }
+  
+  ::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px grey;
+	border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+	background-color: #66A1F3;
+	border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+	background-color: #66A1F3;
+  } */
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+``````````````````````````
+     GLOBAL CSS START 	  |
+``````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+.container {
+	width: 85%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.w-45 {
+	width: 49%;
+	float: left;
+	overflow: hidden;
+}
+
+.w-30 {
+	width: 32%;
+	float: left;
+	overflow: hidden;
+}
+
+.w-80 {
+	width: 80%;
+	float: left;
+	overflow: hidden;
+}
+
+.w-60 {
+	width: 60%;
+	float: left;
+	overflow: hidden;
+}
+
+.w-40 {
+	width: 40%;
+	float: left;
+	overflow: hidden;
+}
+
+.w-20 {
+	width: 20%;
+	float: left;
+	overflow: hidden;
+}
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+``````````````````````````
+     GLOBAL CSS END 	  |
+``````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+``````````````````````````
+    HEADER AREA START	  |
+``````````````````````````
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+
+ 
+
+ /* .header-area {
+    background: url('../images/hero.jpg') no-repeat center center / cover;
+	background-position: center;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 150%;
+} */
+
+	.header-area .menu-area {
+		position: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.header-area .menu-area ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	.header-area .menu-area nav > ul > li {
+		float: left;
+		margin-left: 3px;
+		list-style: none;
+	}
+
+	.header-area .menu-area nav {
+		background: rgba(95, 96, 96, 0.514);
+		padding: 16px;
+		border-radius: 7px;
+	}
+
+	.header-area .menu-area nav > ul > li > a {
+		color: #FFF;
+		text-decoration: none;
+		padding: 16px 55px;
+		transition: all .6s;
+	}
+
+	.header-area .menu-area nav > ul > li > a:hover {
+		font-weight: bold;
+		color: #e2b17b;
+		background: #54586352;
+		border-bottom: 2px solid #e2b17b;
+	}
+
+	.header-area .menu-area ul ul {
+		position: center;
+		top: 104%;
+		background: #9d00ff47;
+		display: none;
+	}
+
+	.header-area .menu-area ul :hover ul{
+		display: block;
+	}
+
+
+	.header-area .menu-area nav ul ul li {
+		list-style: square;
+		color:#27c4f4;
+	}
+
+	.header-area .menu-area nav ul ul li a {
+		text-decoration: none;
+		width: 180px;
+		display: block;
+		font-size: 20px;
+		padding: 9px 0px;
+		font-weight: normal;
+		color: #fff;
+		transition: all .6s;
+	}
+
+	.header-area .menu-area nav ul ul li a:hover {
+		color: #27c4f4;
+		background: #6a789d52;
+	}
+
+
+	.header-area .menu-area nav > ul:after {
+		content:'';
+		display: inline-block;
+		clear: both;
+	}
+
+.header-area .header-content h1{
+    color: #66A1F3;
+	-webkit-text-stroke: 0.1px black; 
+    font-size: 50px;
+    font-weight: 100;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.header-area .header-content b{
+	color: #66A1F3;
+	-webkit-text-stroke: 0.1px black; 
+	padding-bottom: 50px;
+
+}
+
+.header-area .header-content {
+	text-align: center;
+	padding-top: 150px;
+}
+
+.header-area .header-content p{
+	color: #66A1F3;
+	-webkit-text-stroke: 0.2px rgb(25, 24, 24);
+    font-style: italic;
+    color: #d0e7e9;
+    font-size: 20px;
+    font-weight: bold;
+	margin: 0;
+}
+
+
+.header-area .button {
+    position: relative;
+	left: 40%;
+	top: 40px;
+	padding-bottom: 50px;
+
+}
+
+.header-area .button a{
+    background: #bbcaf152;
+    padding: 15px 50px;
+    font-size: 22px;
+    letter-spacing: 2px;
+    border-radius: 3px;
+	color: #1b80e6;
+	text-decoration: none;
+	transition: all .6s;
+}
+
+.header-area .button a:hover{
+    background: #FF8C00;
+	color: #ffffff;
+}
